@@ -1,0 +1,8 @@
+bin/
+data_taxis/
+include/
+lib/
+data/
+share/
+pip-*
+.ipynb*
