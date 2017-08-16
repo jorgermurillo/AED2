@@ -6,3 +6,4 @@ data/
 share/
 pip-*
 .ipynb*
+node_modules

@@ -1,0 +1,11 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jorgermurillo/AED2.git",
+  "author": "Joel Rodriguez <joelerll@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "boundingbox-split": "^1.0.1"
+  }
+}
