@@ -47,7 +47,9 @@ divisor = (north_lat - south_lat)/20
 cellSize = 1000
 R = 6378137 
 stepLatitude =   cellSize *1.1* 180/(math.pi * R)
+print("Step Lat: %f"%(stepLatitude))
 stepLongitude =  cellSize *0.9*180 /( R* math.cos(math.pi*south_lat/180) * math.pi )
+print("Step Lon: %f"%(stepLongitude))
 
 formato_grid = {
 	"lim_sup": -1,
@@ -65,14 +67,19 @@ bandera = False
 anadir_grid(north_lat_tmp, south_lat_tmp, weast_lon_tmp, east_lon_tmp)
 print(grids)
 iteraciones = 0
+cnt = 0
+cnt_y = 0
 while(1):
 	if (weast_lon_tmp >= weast_lon):
 		print('cambio')
+		cnt = 0
+		cnt_y +=1
 		east_lon_tmp = east_lon
 		weast_lon_tmp = east_lon + stepLongitude
 		south_lat_tmp = north_lat_tmp
 		north_lat_tmp = north_lat_tmp + stepLatitude
 	else:
+		cnt+=1
 		east_lon_tmp = weast_lon_tmp
 		weast_lon_tmp = weast_lon_tmp + stepLongitude
 		anadir_grid(north_lat_tmp, south_lat_tmp, weast_lon_tmp, east_lon_tmp)	
@@ -81,3 +88,5 @@ while(1):
 	stepLongitude =  cellSize *0.9*180 /( R* math.cos(math.pi*south_lat_tmp/180) * math.pi )
 	time.sleep(0.1)
 	iteraciones = iteraciones + 1
+	print(cnt)
+print(cnt_y)
