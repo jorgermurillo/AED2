@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  espol:
+    build: .
+    container_name: "exploratorio"
+    volumes:
+      - ".:/home/exploratorio"
+    ports:
+      - "8080:8888"
+    command: pip -r install requirements.txt
